@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<style>
+  .pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .pagination a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: black;
+  }
+</style>
+<body>
+
+  <nav>
+    <ion-icon name="logo-firefox"></ion-icon>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(183,183,183,1)" />
+    </svg>
+    <a href="/"><h3 style="color: yellow;">Menu</h3></a>
+    <form action="">
+      <input type="search">
+      <svg id="sear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path
+          d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"
+          fill="rgba(0,0,0,1)" />
+      </svg>
+    </form>
+    <h2>
+      blue <span>Ford</span>
+    </h2>
+    <div id="line"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path
+        d="M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1zm13 2H6v15.432l6-3.761 6 3.761V4zM8 9h8v2H8V9z"
+        fill="rgba(255,255,255,1)" />
+    </svg>
+    <a href="/create/movie" style="color:yellow ;">Add Movie</a>
+    <a href=<%=user ? "/logout" : "/login" %> style="margin-left: 4%;">
+      <%= user ? "Logout" : "Sign In" %>
+    </a>
+  </nav>
+
+
+
+  <h1 style="margin-top: 10%; ">Trending Movies</h1>
+  <div class='movies'>
+    <% movies.forEach((movie)=>{ %>
+      <a href="/update/movie/<%= movie._id %>">
+        <div class='cnt'>
+          <img src="../upload/<%= movie.image %>">
+          <div class="content">
+            <div class='star'>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z"
+                  fill="rgba(255,180,0,1)" />
+              </svg>
+              4
+            </div>
+            <div class='title'>
+              <%= movie.title %>
+            </div>
+            <div class='date'>release date - <%= movie.releaseDate %>
+            </div>
+            <div class='watchlist'>
+              <div>Watchlist</div>
+            </div>
+            <a href="#">
+              <div class='trailer'>
+                <div>Trailer</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </a>
+      <% }) %>
+  </div>
+  <div class="pagination">
+    <a href="/movies?page=1">1</a>
+    <a href="/movies?page=2">2</a>
+    <a href="/movies?page=3">3</a>
+    <a href="/movies?page=4">4</a>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

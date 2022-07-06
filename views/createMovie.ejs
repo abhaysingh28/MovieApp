@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    form {
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form input[type="text"],
+    .filebox {
+        width: 80%;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .filebox {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        background-color: grey;
+    }
+
+    .file {
+        display: none;
+    }
+
+    input[type="submit"] {
+        width: 80%;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        background-color: yellow;
+        color: black;
+        font-size: 1.5em;
+    }
+
+    nav {
+        position: fixed;
+        top: 0%;
+        display: flex;
+        height: 10vh;
+        width: 100vw;
+        background-color: rgba(128, 128, 128, 0.221);
+    }
+
+    ion-icon {
+        font-size: 2vw;
+        color: rgb(237, 237, 237);
+        margin-left: 10%;
+        margin-top: 1.5%;
+    }
+
+    nav svg {
+        margin-left: 2%;
+        margin-top: 1.8%;
+    }
+
+    nav form {
+        margin-top: 1.9%;
+        margin-left: 1%;
+    }
+
+    nav input {
+        width: 30vw;
+        height: 3vh;
+        background-color: rgba(255, 255, 255, 0.87);
+        border-radius: 12px 12px 12px 12px;
+        font-size: 1vw;
+        padding-left: 10px;
+        border: 1px solid blue;
+    }
+
+    #sear {
+        position: absolute;
+        top: 6%;
+        left: 46%;
+    }
+
+    nav h3 {
+        font-family: gilroy;
+        font-size: 1vw;
+        margin-top: 2%;
+        margin-left: 1%;
+    }
+
+    h2 {
+        color: rgb(255, 255, 255);
+        background-color: transparent;
+        font-size: 1.2vw;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: 10;
+        margin-top: 1.9%;
+        margin-left: 1%;
+
+    }
+
+    nav h2 span {
+        font-family: cataline script;
+        font-weight: 100;
+    }
+
+    #line {
+        height: 60%;
+        width: 0.1vw;
+        background-color: rgb(79, 78, 78);
+        margin-left: 3%;
+        margin-top: 1%;
+        margin-left: 10%;
+    }
+
+    nav a {
+        font-family: gilroy;
+        font-size: 1.3vw;
+        margin-top: 1.8%;
+        margin-left: 0.4%;
+    }
+    .comt{
+        padding-top: 35vh;
+        margin-left: 70vh;
+    }
+</style>
+
+<body>
+    <nav>
+        <ion-icon name="logo-firefox"></ion-icon>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(183,183,183,1)" />
+        </svg>
+        <a href="/"><h3 style="color: yellow;">Home</h3></a>
+        <form action="">
+            <input type="search">
+            <svg id="sear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                    d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"
+                    fill="rgba(0,0,0,1)" />
+            </svg>
+        </form>
+        <h2>
+            blue <span>Ford</span>
+        </h2>
+        <div id="line"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path
+                d="M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1zm13 2H6v15.432l6-3.761 6 3.761V4zM8 9h8v2H8V9z"
+                fill="rgba(255,255,255,1)" />
+        </svg>
+        <a href="/create/movie" style="color:yellow ;">Add Movie</a>
+        <a href=<%=user ? "/logout" : "/login" %> style="margin-left: 4%;">
+            <%= user ? "Logout" : "Sign In" %>
+        </a>
+    </nav>
+
+    <div class="comt">
+        <h2>Upload Movies </h2>
+        <form action="/create/movie" method="post" enctype="multipart/form-data">
+            <input required type="text" name="title" placeholder="Title">
+            <input required type="text" name="description" placeholder="Description">
+            <input required class="file" type="file" name="image">
+            <div class="filebox">Upload Image</div>
+            <input type="submit" value="Upload Movie">
+        </form>
+    </div>
+
+
+    <script>
+        var file = document.querySelector('.file');
+        var filebox = document.querySelector('.filebox');
+        filebox.addEventListener('click', function () {
+            file.click();
+        });
+        file.addEventListener('change', function () {
+            if (file.value) {
+                filebox.innerHTML = file.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+            } else {
+                filebox.innerHTML = 'No file chosen, yet.';
+            }
+        });
+    </script>
+</body>
+
+</html>

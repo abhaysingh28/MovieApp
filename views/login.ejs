@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+  }
+
+  #main {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+
+  }
+
+  #main h1 {
+    position: absolute;
+    top: 30%;
+    left: 12%;
+    font-size: 10vw;
+    font-weight: 700;
+    color: rgb(255, 234, 0);
+    font-family: gilroy;
+    z-index: 10;
+  }
+
+  #main h2 {
+    position: absolute;
+    top: 55%;
+    left: 18%;
+    font-size: 1vw;
+    font-weight: 700;
+    color: rgb(0, 115, 255);
+    font-family: gilroy;
+  }
+
+  #box1 {
+
+    height: 45vh;
+    width: 28vw;
+    background-color: rgb(175, 167, 167);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, -50%);
+    border-radius: 12px;
+    background: #fffefe;
+    box-shadow: 11px 11px 38px #a6a5a5,
+      -1px -1px 0px #9c9999;
+  }
+
+  #box1 input {
+    margin-top: 4%;
+    margin-left: 5%;
+    height: 6vh;
+    width: 25vw;
+    padding-left: 20px;
+    border-radius: 10px;
+    border: 1px solid lightblue;
+  }
+
+  #box1 input:nth-child(3) {
+    background-color: rgb(0, 102, 255);
+    color: aliceblue;
+    padding-left: 0px;
+
+  }
+
+  #box1 h1 {
+    font-size: 1vw;
+    color: blue;
+    position: absolute;
+    top: 63%;
+    left: 32%;
+    font-weight: 100;
+  }
+
+  #box1 hr {
+    margin-top: 16%;
+
+    border: 0.1px solid rgb(199, 197, 197);
+
+  }
+
+  #create {
+    position: relative;
+    height: 6vh;
+    width: 16vw;
+    border-radius: 8px;
+    margin-left: 21%;
+    margin-top: 4%;
+    background-color: yellow;
+    cursor: pointer;
+  }
+
+  #create h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2vh;
+    color: rgb(0, 0, 0);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+  }
+
+  #box2 {
+    position: relative;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(150, 218, 228, 0.527);
+    z-index: 1000;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  #box3 h1 {
+    margin-top: -30%;
+    margin-left: -6.5%;
+    font-size: 2vw;
+    font-family: gilroy;
+    font-weight: 900;
+    color: rgb(78, 76, 76);
+
+  }
+
+  #box3 h2 {
+    font-size: 1vw;
+    position: absolute;
+    top: 9%;
+    left: 6%;
+    color: rgb(19, 157, 237);
+
+  }
+
+  #box3 svg {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+  }
+
+  #box3 {
+    position: absolute;
+    top: 5%;
+    left: 30.4%;
+    height: 90vh;
+    width: 40vw;
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+
+  #box3 form {
+
+    position: absolute;
+    top: 20%;
+    left: 4%;
+  }
+
+  #box3 input {
+    margin-top: 1%;
+    border-radius: 3px;
+    border: 1px solid rgb(13, 238, 242);
+    height: 6vh;
+    padding-left: 5%;
+    width: 37vw;
+
+  }
+
+
+  #box3 h3 {
+    position: absolute;
+    bottom: 35%;
+    left: 4%;
+    font-size: 1vw;
+    font-family: gilroy;
+    font-weight: 100;
+    color: gray;
+  }
+</style>
+
+<body>
+
+  <div id="main">
+    <h1>NETFLUX</h1>
+    <h2 style="color: white;">Watch Netflix movies & <span style="color: rgb(154, 152, 152);">TV  shows online or
+        stream right to your smart </span></h2>
+
+    <div id="box1">
+
+      <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="password">
+        <input style="background-color:black ;" type="submit" value="Log in">
+      </form>
+
+      <a href="">
+        <h1>Forgotten password?</h1>
+      </a>
+      <hr>
+      <div id="create">
+        <h4>Create new account</h4>
+      </div>
+
+
+    </div>
+
+    <div id="box2">
+
+
+      <div id="box3">
+        <h1>Sign up</h1>
+        <h2>It's quick and easy.</h2>
+        <svg id="cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" />
+        </svg>
+
+
+        <form action="/register" method="post">
+          <input type="text" placeholder="username" name="username">
+          <input type="text" placeholder="email address" name="email">
+          <input type="password" placeholder="password" required name="password">
+          <input type="submit">
+
+
+
+        </form>
+        <h3>Netflix is the world’s leading subscription service for watching TV episodes and movies on your favorite
+          device. Get this free application as a part of your Netflix membership and you can</h3>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <script>
+    var box1 = document.querySelector('#box1')
+    var box2 = document.querySelector('#box2')
+    var box3 = document.querySelector('#box3')
+    var cross = document.querySelector('#cross')
+    var create = document.querySelector('#create')
+
+    create.addEventListener("click", function () {
+      box2.style.display = "flex"
+    })
+
+    cross.addEventListener("click", function () {
+      box2.style.display = "none"
+    })
+
+
+  </script>
+</body>
+
+</html>
